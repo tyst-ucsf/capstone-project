@@ -1,0 +1,15 @@
+Useful Terminal commands
+
+# to get the names of all sub folders:
+ls -d */ | sed 's:/$::' | pbcopy
+
+# to check for RESULTS.csv file
+find . -type d -depth 1 | while read dir; do
+  [ -d "$dir" ] && [ ! -f "$dir/RESULTS.CSV" ] && echo "${dir#./}"
+done
+
+# to keep laptop awake
+caffeinate
+
+# to mmake sure caffeinate is off
+pgrep caffeinate
