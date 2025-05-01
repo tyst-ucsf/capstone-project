@@ -11,5 +11,5 @@ done
 # to keep laptop awake
 caffeinate
 
-# to mmake sure caffeinate is off
+# to make sure caffeinate is off
 pgrep caffeinate
