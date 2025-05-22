@@ -15,9 +15,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Must be installed IN THIS ORDER
-RUN R -e "install.packages(c('BiocManager', 'remotes'), repos='https://cloud.r-project.org')"
+RUN R -e "install.packages(c('BiocManager', 'remotes', 'Rcpp', 'tmvtnorm', 'norm'), repos='https://cloud.r-project.org')"
 
-RUN R -e "install.packages(c('Rcpp', 'tmvtnorm', 'norm'), repos='https://cloud.r-project.org')"
 RUN R -e "BiocManager::install(c('pcaMethods', 'impute'), ask=FALSE, update=FALSE)"
 
-RUN R -e \"install.packages('https://cran.r-project.org/src/contrib/Archive/imputeLCMD/imputeLCMD_2.0.tar.gz', repos=NULL, type='source')\"
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/imputeLCMD/imputeLCMD_2.0.tar.gz', repos=NULL, type='source')"
