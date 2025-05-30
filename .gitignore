@@ -4,6 +4,5 @@
 # Ignore macOS system files
 .DS_Store
 
-# Optional: ignore virtual environments (if you use them)
 venv/
 .env/
